@@ -1,0 +1,24 @@
+<header th:fragment="header (loggedIn, name)" class="p-3 text-bg-dark">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="/home" class="nav-link px-2 text-secondary">Home</a></li>
+            </ul>
+            <form class="d-flex " role="search" action="/search" method="get">
+                <input name="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="form-control form-control-dark text-bg-dark me-2" type="submit">Search</button>
+            </form>
+            <div th:if="${loggedIn}" class="text-end d-flex">
+                <h4>Hello, </h4><h4 th:text="${name}" class="me-2"></h4>
+                <a href="/logout" class="btn btn-outline-light me-2" >Logout</a>
+            </div>
+
+            <div th:unless="${loggedIn}" class="text-end">
+                <a href="/sign-in" class="btn btn-outline-light me-2">Sign-in</a>
+                <a href="/sign-up" class="btn btn-outline-light me-2">Sign-up</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+

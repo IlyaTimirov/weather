@@ -1,0 +1,11 @@
+<div th:fragment="forecast (forecast)">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+            <strong th:text="${forecast.country}" class="d-inline-block mb-2 text-primary-emphasis"></strong>
+            <label>City:</label> <h3 th:text="${forecast.city}" class="mb-0"></h3>
+            <div class="mb-1 text-body-secondary">Temperature: <h4 th:text="${forecast.temp}"></h4></div>
+            <div class="mb-1 text-body-secondary">Maximum temperature: <h4 th:text="${forecast.tempMax}"></h4></div>
+            <div class="mb-1 text-body-secondary">Minimum temperature: <h4 th:text="${forecast.tempMin}"></h4></div>
+        </div>
+    </div>
+</div>
